@@ -1,0 +1,141 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, input, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1.2;
+    /* box-sizing: border-box; */
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-left: .7rem;
+    padding-right: .7rem;
+}
+
+#headline {
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 1rem;
+}
+
+#headline > h1 {
+    color: rgb(15, 36, 62);
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: .8;
+    text-align: right;
+}
+
+#headline > h2 {
+    text-align: right;
+    font-size: 1.9rem;
+    font-weight: bold;
+    line-height: 1;
+    font-variant-caps: small-caps;
+    color: rgb(100, 36, 35);
+}
+
+main > section {
+    max-width: 36rem;
+    border-top: .7rem solid rgb(15, 36, 62, .8);
+    padding-top: .2rem;
+    padding-bottom: 1.5rem;
+    padding-left: .3rem;
+}
+
+h2 {
+    color: rgb(22, 32, 73);
+    margin-bottom: .4rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+#education > div {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+#education h3 {
+    color: rgb(100, 36, 35);
+    font-size: 1.2rem;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#education strong {
+    font-weight: bold;
+}
+
+#education cite {
+    white-space: nowrap;
+}
+
+#education span {
+    float: right;
+}
+
+#education cite {
+    font-size: 1rem;
+}
+
+#excellence ul {
+    padding: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#excellence li {
+    margin-left: 5%;
+    padding-left: 1%;
+    flex-basis: 27%;
+    list-style-type: circle;
+}
+
+#history > div {
+    border-bottom: 1px solid rgb(100, 36, 35, .6)
+}
