@@ -55,9 +55,9 @@ table {
 #headline {
     width: 100%;
     padding-top: 2em;
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
+    padding-right: .3rem;
 }
-
 #headline > h1 {
     color: rgb(15, 36, 62);
     font-weight: bold;
@@ -69,13 +69,10 @@ table {
 #headline > h2 {
     text-align: right;
     font-size: 1.9rem;
-    font-weight: bold;
     line-height: 1;
-    font-variant-caps: small-caps;
-    color: rgb(100, 36, 35);
 }
 
-main > section {
+.main-info > section {
     max-width: 36rem;
     border-top: .7rem solid rgb(15, 36, 62, .8);
     padding-top: .2rem;
@@ -84,10 +81,24 @@ main > section {
 }
 
 h2 {
-    color: rgb(22, 32, 73);
+    color: rgb(100, 36, 35);
     margin-bottom: .4rem;
     font-weight: bold;
     font-size: 1.5rem;
+    font-variant-caps: small-caps;
+}
+
+h3 {
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(22, 32, 73);
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgb(22, 32, 73);
 }
 
 p {
@@ -99,43 +110,90 @@ p {
     padding-bottom: .5rem;
 }
 
-#education h3 {
-    color: rgb(100, 36, 35);
-    font-size: 1.2rem;
-    display: inline-block;
-    font-weight: bold;
+#essentials li {
+    position: relative;
+    padding-left: 4%;
 }
 
-#education strong {
-    font-weight: bold;
-}
-
-#education cite {
-    white-space: nowrap;
-}
-
-#education span {
-    float: right;
-}
-
-#education cite {
-    font-size: 1rem;
+#essentials li::before {
+    content: '-';
+    position: absolute;
+    left: 1%;
 }
 
 #excellence ul {
-    padding: .5rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    padding-top: .3rem;
+    padding-left: .3rem;
 }
 
 #excellence li {
-    margin-left: 5%;
-    padding-left: 1%;
-    flex-basis: 27%;
-    list-style-type: circle;
+    font-size: 90%;
+    position: relative;
+    padding-left: 4%;
+    flex-basis: 29%;
+}
+
+#excellence li::before {
+    content: '-';
+    position: absolute;
+    left: 6%;
 }
 
 #history > div {
-    border-bottom: 1px solid rgb(100, 36, 35, .6)
+    padding-bottom: 1rem;
+    padding-top: rem;
+    border-bottom: 3px solid rgb(100, 36, 35, .6);
+}
+
+#history > div:first-of-type {
+    padding-top: 1rem;
+}
+
+#history h4 {
+    padding-top: .5rem;
+}
+
+#history > div > div {
+    padding-bottom: .3rem;
+    padding-top: 1.5rem;
+    border-bottom: 1px solid rgb(100, 36, 35, .6);
+}
+
+#history > div > div:last-of-type {
+    padding-bottom: 1rem;
+    padding-top: 1.5rem;
+    border: none;
+}
+/* 
+div.years {
+    display: inline-block;
+} */
+
+.float-right div:last-child {
+    padding-bottom: .3rem;
+    font-size: 80%;
+}
+
+.float-right div:first-child.shrink {
+    font-size: 80%;
+}
+
+@media (min-width: 480px){
+    .float-right {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .float-right div:last-child {
+        padding-bottom: 0;
+        white-space: nowrap;
+        flex-grow: 1;
+        align-self: flex-end;
+        text-align: right;
+    }
 }
