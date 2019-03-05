@@ -142,7 +142,7 @@ h2 {
 
 h3 {
   position: relative;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: rgb(22, 32, 73);
 }
@@ -162,6 +162,19 @@ p {
   font-size: 1.1rem;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited,
+a:link,
+a:hover,
+a:active,
+a[href^="mailto"] {
+  color: rgb(15, 36, 62);
+  cursor: pointer;
+}
+
 .sheet {
   background-color: white;
   overflow: hidden;
@@ -173,14 +186,16 @@ p {
 .sheet > div {
   height: 100%;
   flex-basis: 65%;
+  overflow: hidden;
 }
 
 aside {
   flex-basis: 35%;
   height: 100%;
-  border-left: .2rem solid rgba(22, 32, 73, 0.75);
-  border-top: .25in solid rgba(22, 32, 73, 0.75);
-  padding-right: .25in;
+  border-left: 1px solid rgba(22, 32, 73, 0.75);
+  border-top: 0.25in solid rgba(22, 32, 73, 0.75);
+  padding-right: 0.25in;
+  overflow: hidden;
 }
 
 .headline {
@@ -188,50 +203,152 @@ aside {
   width: 100%;
   padding-bottom: 1rem;
   padding-right: 2rem;
+  text-align: center;
+  color: rgb(15, 36, 62);
 }
 
 .headline > h1 {
-  color: rgb(15, 36, 62);
   font-weight: bold;
   font-size: 4rem;
   line-height: 0.8;
-  text-align: right;
-  /* margin-top: .25in; */
-  padding-top: .35in;
+  padding-top: 0.35in;
 }
 
 .headline > h2 {
-  text-align: right;
   font-size: 1.9rem;
-  margin-top: .8rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
   line-height: 0.8;
 }
 
-.main-info > section {
-  max-width: 36rem;
-  border-top: 0.5rem solid rgba(22, 32, 73, 0.75);
-  padding-top: 0.2rem;
-  padding-bottom: 1.5rem;
-  padding-left: 0.3rem;
-  padding-right: 0.5em;
+.headline span {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
-#summary {
-  padding-top: 0.3rem;
+.headline a {
+  text-decoration: none;
 }
 
-.institution {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.float-right div:last-child {
+.dates div:last-child {
   padding-bottom: 0.3rem;
   font-size: 80%;
 }
 
-.float-right div:first-child.shrink {
-  font-size: 80%;
+.main-info > section {
+  max-width: 36rem;
+  border-top: 1px solid rgba(22, 32, 73, 0.75);
+  padding-top: 0.2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.8em;
+}
+
+.main-info h2 {
+  padding-bottom: 0.5rem;
+}
+
+#technologies {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: -0.5rem;
+  margin-bottom: -0.5rem;
+  padding-top: 0.5rem;
+}
+
+#technologies > li {
+  flex: 0 1 auto;
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+#technologies img {
+  display: block;
+  height: 35px;
+  margin: 0 auto;
+  margin-bottom: 0.1rem;
+}
+
+#projects > div {
+  padding-bottom: 0.9rem;
+}
+
+#projects ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#projects ul {
+  display: none;
+}
+
+#projects li {
+  font-size: 0.8rem;
+  position: relative;
+  flex: 1 1 50%;
+  display: block;
+  padding-top: 0.3rem;
+  padding-left: 0.6rem;
+}
+
+#projects li::before {
+  content: "-";
+  position: absolute;
+  left: -0.1rem;
+}
+
+#projects h3 {
+  display: inline;
+  padding-bottom: 0.5rem;
+}
+
+#projects a {
+  text-decoration: underline;
+}
+
+#technologies p {
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+
+
+.company {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.company p {
+  font-size: 0.8rem;
+}
+
+/* .company::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  width: 40%;
+  border-bottom: 1px solid rgb(100, 36, 35, 0.6);
+}
+
+.company:last-child::after {
+  display: none;
+} */
+
+
+
+
+.institution {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 aside > section {
@@ -241,63 +358,18 @@ aside > section {
 }
 
 aside h2 {
-    box-sizing: content-box;
-    display: inline-block;
-    padding-left: 1rem;
-    padding-top: .5rem;
-    padding-bottom: .7rem;
-    line-height: 1.3;
-    border-top: 0.5rem solid rgba(22, 32, 73, 0.75);
+  /* display: inline-block; */
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+  line-height: 1.3;
+  border-top: 1px solid rgba(22, 32, 73, 0.75);
 }
 
-aside h2:first-of-type  {
-    border-top: none;
+aside h2:first-of-type {
+  border-top: none;
+  padding-bottom: 0.7rem;
 }
-
-#technologies {
-  width: 100%;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -.4rem;
-}
-
-#technologies > li {
-  display: block;
-  flex: 0 1 25%;
-  height: 60px;
-  overflow: hidden;
-  margin-bottom: .2rem;
-}
-
-#technologies img {
-  display: block;
-  height: 40px;
-  margin: 0 auto;
-  margin-bottom: .1rem;
-}
-
-#technologies p {
-  font-size: .7rem;
-  text-align: center;
-}
-
-
-
-
-
-
-
-#projects > li {
-  display: block;
-  width: 10px;
-  height: 10px;
-}
-
-#projects > div {
-    padding: .5rem;
-}
-
 
 @page {
   size: letter portrait;
@@ -312,9 +384,8 @@ aside h2:first-of-type  {
   .sheet {
     width: 8.5in;
     height: 11in;
-    /* page-break-after: always; */
-    padding-left: .2in;
-    padding-bottom: .2in;
+    padding-left: 0.2in;
+    padding-bottom: 0.2in;
     padding-right: 0;
     padding-top: 0;
     margin: 0 auto;
@@ -322,6 +393,14 @@ aside h2:first-of-type  {
 
   .sheet .headline {
     display: block;
+  }
+
+  #projects a::after {
+    display: inline;
+    content: attr(href);
+    font-size: 0.7rem;
+    padding-left: 0.5rem;
+    text-decoration: none;
   }
 }
 
@@ -336,25 +415,22 @@ aside h2:first-of-type  {
   }
 }
 
-@media screen and (min-width: 480px) {
-  .float-right {
+@media (min-width: 480px) {
+  /* .dates {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
   }
 
-  .float-right div:last-child {
+  .dates div:last-child {
     padding-bottom: 0;
     white-space: nowrap;
     flex-grow: 1;
     align-self: flex-end;
     text-align: right;
-  }
+  } */
 }
-
-
-
 
 #essentials li {
   position: relative;
@@ -388,35 +464,7 @@ aside h2:first-of-type  {
   left: 6%;
 }
 
-#history > div {
-  padding-bottom: 1rem;
-  padding-top: rem;
-  border-bottom: 3px solid rgb(100, 36, 35, 0.6);
-}
-
-#history > div:first-of-type {
-  padding-top: 1rem;
-}
-
-#history h4 {
-  padding-top: 0.5rem;
-}
-
-#history > div > div {
-  padding-bottom: 0.3rem;
-  padding-top: 1.5rem;
-  border-bottom: 1px solid rgb(100, 36, 35, 0.6);
-}
-
-#history > div > div:last-of-type {
-  padding-bottom: 1rem;
-  padding-top: 1.5rem;
-  border: none;
-}
 /* 
 div.years {
     display: inline-block;
 } */
-
-
-
