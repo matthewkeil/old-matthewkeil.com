@@ -440,12 +440,13 @@ aside h2:first-of-type {
   }
 }
 
-/* @media screen {
+@media screen {
+
   .container {
-    box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
-    margin: 5mm;
+    margin: 0 auto;
+    max-width: 8.5in;
   }
-} */
+}
 
 @media screen and (max-width: 719px) {
   .container {
@@ -462,6 +463,20 @@ aside h2:first-of-type {
   h2,
   #summary {
     text-align: center;
+  }
+
+  aside {
+    padding-top: 0;
+    padding-right: 0;
+  }
+  
+  aside > section {
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  aside h2 {
+    border-left: none;
   }
 
   /* .dates {
