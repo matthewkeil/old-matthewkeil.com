@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/browser-sync start --server --index 'src/resume.webdev.html' --files 'src' --serveStatic 'src'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gsutil cp -r src/* gs://resume.matthewkeil.com"
   },
   "keywords": [],
   "author": "",

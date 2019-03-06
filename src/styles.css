@@ -154,7 +154,7 @@ h4 {
 }
 
 h5 {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: rgb(22, 32, 73);
 }
 
@@ -188,26 +188,22 @@ a[href^="mailto"] {
   position: relative;
   box-sizing: border-box;
   display: flex;
+  width: 100%;
 }
 
 main {
   height: 100%;
-  flex-basis: 65%;
+  /* flex-basis: 65%; */
   overflow: hidden;
   padding-top: 0.25in;
+  max-width: 36rem;
+  margin: 0 auto;
 }
 
 main > section {
-  margin: 0 auto;
-  max-width: 36rem;
   border-top: 1px solid rgba(22, 32, 73, 0.75);
-  padding-top: 0.2rem;
   padding-bottom: 1.5rem;
   padding-right: 0.8em;
-}
-
-main h2 {
-  padding-bottom: 0.5rem;
 }
 /** 
 *
@@ -253,6 +249,7 @@ header > div > *:first-child {
 
 #projects article {
   padding-top: 2rem;
+  padding-left: .5rem;
 }
 
 #projects article:first-of-type {
@@ -261,6 +258,10 @@ header > div > *:first-child {
 
 #projects h3 {
   display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+#projects h5 {
   padding-bottom: 0.3rem;
 }
 
@@ -282,6 +283,10 @@ header > div > *:first-child {
   height: 3rem;
   margin-right: 1.5rem;
   margin-top: .3rem;
+}
+
+.project-container li {
+  font-size: 0.8rem;
 }
 
 .stack {
@@ -320,32 +325,31 @@ header > div > *:first-child {
 */
 aside {
   flex-basis: 35%;
+  flex-grow: 1;
   height: 100%;
-  border-left: 1px solid rgba(22, 32, 73, 0.75);
-  /* border-top: 0.25in solid rgba(22, 32, 73, 0.75); */
   padding-top: 0.25in;
   padding-right: 0.25in;
   overflow: hidden;
 }
 
 aside > section {
+  border-left: 1px solid rgba(22, 32, 73, 0.75);
   width: 100%;
-  background-color: white;
   padding-left: 1rem;
 }
 
 aside h2 {
-  /* display: inline-block; */
   padding-left: 1rem;
-  /* padding-top: 0.5rem; */
-  padding-bottom: 0.3rem;
-  line-height: 1.3;
+  /*padding-bottom: 0.3rem; */
+  /* padding-top: .3rem; */
+  /* line-height: 1; */
+  border-left: 1px solid rgba(22, 32, 73, 0.75);
   border-top: 1px solid rgba(22, 32, 73, 0.75);
 }
 
 aside h2:first-of-type {
-  border-top: none;
-  padding-bottom: 0.7rem;
+  /* border-top: none; */
+  padding-top: 0;
 }
 
 .company {
@@ -353,8 +357,16 @@ aside h2:first-of-type {
   padding-bottom: 1.5rem;
 }
 
+.company > div {
+  padding-top: .5rem;
+}
+
 .company p {
   font-size: 0.8rem;
+}
+
+.skill-set li {
+  font-size: .8rem;
 }
 
 /* .company::after {
@@ -376,23 +388,9 @@ aside h2:first-of-type {
   padding-bottom: 0.5rem;
 }
 
-/** 
-*
-*
-*  helpers
-*
-*
-*/
-.dates div:last-child {
-  padding-bottom: 0.3rem;
-  /* font-size: 80%; */
-}
-
 .list-with-bullets li {
-  font-size: 0.8rem;
   position: relative;
   display: block;
-  padding-top: 0.3rem;
   padding-left: 0.6rem;
 }
 
@@ -400,6 +398,11 @@ aside h2:first-of-type {
   content: "-";
   position: absolute;
   left: -0.1rem;
+}
+
+.dates div:last-child {
+  /* padding-bottom: 0.3rem; */
+  font-size: 80%;
 }
 
 @page {
@@ -483,6 +486,17 @@ aside h2:first-of-type {
     padding-right: 0;
   }
 }
+
+
+
+/** 
+*
+*
+*  helpers
+*
+*
+*/
+
 
 #essentials li {
   position: relative;
