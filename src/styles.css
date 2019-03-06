@@ -251,69 +251,12 @@ header > div > *:first-child {
   /* text-decoration: none; */
 }
 
-/** 
-*
-*
-*  technologies section
-*
-*
-*/
-#technologies {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  margin-left: -0.5rem;
-  margin-bottom: -0.5rem;
-  padding-top: 0.5rem;
-}
-
-#technologies > li {
-  flex: 0 1 auto;
-  display: block;
-  overflow: hidden;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-}
-
-#technologies img {
-  display: block;
-  height: 35px;
-  margin: 0 auto;
-  margin-bottom: 0.1rem;
-}
-
-#technologies p {
-  font-size: 0.6rem;
-  text-align: center;
-}
-
-/** 
-*
-*
-*  technologies section
-*
-*
-*/
-.project-container {
+#projects article {
   padding-top: 2rem;
-  display: flex;
-  flex-direction: row;
-  /* align-items: center; */
 }
 
-.project-container:first-of-type {
+#projects article:first-of-type {
   padding-top: 0.5rem;
-}
-
-.project-container > div {
-  flex: 1 1 auto;
-}
-
-.project-container > img {
-  width: 50px;
-  height: 50px;
-  margin-right: 1.5rem;
 }
 
 #projects h3 {
@@ -325,10 +268,27 @@ header > div > *:first-child {
   text-decoration: underline;
 }
 
+.project-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-container > div {
+  flex: 1 1 auto;
+}
+
+.project-container > img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1.5rem;
+  margin-top: .3rem;
+}
+
 .stack {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .stack li {
@@ -338,6 +298,19 @@ header > div > *:first-child {
   margin-left: 0.8rem;
   margin-top: 0.8rem;
 }
+
+.stack img {
+  display: block;
+  height: 25px;
+  margin: 0 auto;
+  margin-bottom: 0.1rem;
+}
+
+.stack p {
+  font-size: 0.5rem;
+  text-align: center;
+}
+
 /** 
 *
 *
