@@ -136,25 +136,25 @@ table {
 h2 {
   color: rgb(100, 36, 35);
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-variant-caps: small-caps;
 }
 
 h3 {
   position: relative;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: rgb(22, 32, 73);
 }
 
 h4 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   color: rgb(22, 32, 73);
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: rgb(22, 32, 73);
 }
 
@@ -193,7 +193,8 @@ aside {
   flex-basis: 35%;
   height: 100%;
   border-left: 1px solid rgba(22, 32, 73, 0.75);
-  border-top: 0.25in solid rgba(22, 32, 73, 0.75);
+  /* border-top: 0.25in solid rgba(22, 32, 73, 0.75); */
+  padding-top: .25in;
   padding-right: 0.25in;
   overflow: hidden;
 }
@@ -211,7 +212,7 @@ aside {
   font-weight: bold;
   font-size: 4rem;
   line-height: 0.8;
-  padding-top: 0.35in;
+  padding-top: 0.25in;
 }
 
 .headline > h2 {
@@ -233,7 +234,7 @@ aside {
 
 .dates div:last-child {
   padding-bottom: 0.3rem;
-  font-size: 80%;
+  /* font-size: 80%; */
 }
 
 .main-info > section {
@@ -360,7 +361,7 @@ aside > section {
 aside h2 {
   /* display: inline-block; */
   padding-left: 1rem;
-  padding-top: 0.5rem;
+  /* padding-top: 0.5rem; */
   padding-bottom: 0.3rem;
   line-height: 1.3;
   border-top: 1px solid rgba(22, 32, 73, 0.75);
