@@ -175,7 +175,14 @@ a[href^="mailto"] {
   cursor: pointer;
 }
 
-.sheet {
+/** 
+*
+*
+*  primary layout
+*
+*
+*/
+.container {
   background-color: white;
   overflow: hidden;
   position: relative;
@@ -183,73 +190,74 @@ a[href^="mailto"] {
   display: flex;
 }
 
-.sheet > div {
+main {
   height: 100%;
   flex-basis: 65%;
   overflow: hidden;
-}
-
-aside {
-  flex-basis: 35%;
-  height: 100%;
-  border-left: 1px solid rgba(22, 32, 73, 0.75);
-  /* border-top: 0.25in solid rgba(22, 32, 73, 0.75); */
-  padding-top: .25in;
-  padding-right: 0.25in;
-  overflow: hidden;
-}
-
-.headline {
-  display: none;
-  width: 100%;
-  padding-bottom: 1rem;
-  padding-right: 2rem;
-  text-align: center;
-  color: rgb(15, 36, 62);
-}
-
-.headline > h1 {
-  font-weight: bold;
-  font-size: 4rem;
-  line-height: 0.8;
   padding-top: 0.25in;
 }
 
-.headline > h2 {
-  font-size: 1.9rem;
-  margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
-  line-height: 0.8;
-}
-
-.headline span {
-  display: block;
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
-.headline a {
-  text-decoration: none;
-}
-
-.dates div:last-child {
-  padding-bottom: 0.3rem;
-  /* font-size: 80%; */
-}
-
-.main-info > section {
+main > section {
+  margin: 0 auto;
   max-width: 36rem;
   border-top: 1px solid rgba(22, 32, 73, 0.75);
   padding-top: 0.2rem;
   padding-bottom: 1.5rem;
-  padding-left: 0.5rem;
   padding-right: 0.8em;
 }
 
-.main-info h2 {
+main h2 {
   padding-bottom: 0.5rem;
 }
+/** 
+*
+*
+*  header area
+*
+*
+*/
+header {
+  width: 100%;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  color: rgb(15, 36, 62);
+}
 
+header > h1 {
+  font-weight: bold;
+  font-size: 3.5rem;
+  line-height: 0.8;
+}
+
+header > h2 {
+  font-size: 1.9rem;
+  line-height: 1;
+  padding-bottom: 0.2rem !important;
+}
+
+header > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 0.3rem;
+}
+
+header > div > * {
+  padding-left: 1.5rem;
+}
+
+header > div > *:first-child {
+  padding-left: 0;
+  /* text-decoration: none; */
+}
+
+/** 
+*
+*
+*  technologies section
+*
+*
+*/
 #technologies {
   display: flex;
   flex-wrap: wrap;
@@ -275,51 +283,97 @@ aside {
   margin-bottom: 0.1rem;
 }
 
-#projects > div {
-  padding-bottom: 0.9rem;
+#technologies p {
+  font-size: 0.6rem;
+  text-align: center;
 }
 
-#projects ul {
+/** 
+*
+*
+*  technologies section
+*
+*
+*/
+.project-container {
+  padding-top: 2rem;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  /* align-items: center; */
 }
 
-#projects ul {
-  display: none;
+.project-container:first-of-type {
+  padding-top: 0.5rem;
 }
 
-#projects li {
-  font-size: 0.8rem;
-  position: relative;
-  flex: 1 1 50%;
-  display: block;
-  padding-top: 0.3rem;
-  padding-left: 0.6rem;
+.project-container > div {
+  flex: 1 1 auto;
 }
 
-#projects li::before {
-  content: "-";
-  position: absolute;
-  left: -0.1rem;
+.project-container > img {
+  width: 50px;
+  height: 50px;
+  margin-right: 1.5rem;
 }
 
 #projects h3 {
-  display: inline;
-  padding-bottom: 0.5rem;
+  display: inline-block;
+  padding-bottom: 0.3rem;
 }
 
 #projects a {
   text-decoration: underline;
 }
 
-#technologies p {
-  font-size: 0.6rem;
-  text-align: center;
+.stack {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
+.stack li {
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  margin-left: 0.8rem;
+  margin-top: 0.8rem;
+}
+/** 
+*
+*
+*  aside
+*
+*
+*/
+aside {
+  flex-basis: 35%;
+  height: 100%;
+  border-left: 1px solid rgba(22, 32, 73, 0.75);
+  /* border-top: 0.25in solid rgba(22, 32, 73, 0.75); */
+  padding-top: 0.25in;
+  padding-right: 0.25in;
+  overflow: hidden;
+}
 
+aside > section {
+  width: 100%;
+  background-color: white;
+  padding-left: 1rem;
+}
+
+aside h2 {
+  /* display: inline-block; */
+  padding-left: 1rem;
+  /* padding-top: 0.5rem; */
+  padding-bottom: 0.3rem;
+  line-height: 1.3;
+  border-top: 1px solid rgba(22, 32, 73, 0.75);
+}
+
+aside h2:first-of-type {
+  border-top: none;
+  padding-bottom: 0.7rem;
+}
 
 .company {
   position: relative;
@@ -344,32 +398,35 @@ aside {
   display: none;
 } */
 
-
-
-
 .institution {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-aside > section {
-  width: 100%;
-  background-color: white;
-  padding-left: 1rem;
-}
-
-aside h2 {
-  /* display: inline-block; */
-  padding-left: 1rem;
-  /* padding-top: 0.5rem; */
+/** 
+*
+*
+*  helpers
+*
+*
+*/
+.dates div:last-child {
   padding-bottom: 0.3rem;
-  line-height: 1.3;
-  border-top: 1px solid rgba(22, 32, 73, 0.75);
+  /* font-size: 80%; */
 }
 
-aside h2:first-of-type {
-  border-top: none;
-  padding-bottom: 0.7rem;
+.list-with-bullets li {
+  font-size: 0.8rem;
+  position: relative;
+  display: block;
+  padding-top: 0.3rem;
+  padding-left: 0.6rem;
+}
+
+.list-with-bullets li::before {
+  content: "-";
+  position: absolute;
+  left: -0.1rem;
 }
 
 @page {
@@ -382,7 +439,7 @@ aside h2:first-of-type {
     background-color: black;
   }
 
-  .sheet {
+  .container {
     width: 8.5in;
     height: 11in;
     padding-left: 0.2in;
@@ -392,8 +449,10 @@ aside h2:first-of-type {
     margin: 0 auto;
   }
 
-  .sheet .headline {
+  header a::after {
+    content: attr(href);
     display: block;
+    font-size: 0.5rem;
   }
 
   #projects a::after {
@@ -405,18 +464,30 @@ aside h2:first-of-type {
   }
 }
 
-@media screen {
-  .sheet {
+/* @media screen {
+  .container {
     box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
     margin: 5mm;
   }
+} */
 
-  .sheet:first-child #headline {
+@media screen and (max-width: 719px) {
+  .container {
     display: block;
+    padding-left: 4vw;
+    padding-right: 4vw;
   }
-}
 
-@media (min-width: 480px) {
+  main,
+  aside {
+    width: 100%;
+  }
+
+  h2,
+  #summary {
+    text-align: center;
+  }
+
   /* .dates {
     width: 100%;
     display: flex;
@@ -431,6 +502,13 @@ aside h2:first-of-type {
     align-self: flex-end;
     text-align: right;
   } */
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 #essentials li {

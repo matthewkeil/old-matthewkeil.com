@@ -5,195 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <title>Resume for Matthew Keil</title>
+    <script>
+      function exportAsDoc() {
+        const header =
+          "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+          "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+          "xmlns='http://www.w3.org/TR/REC-html40'>" +
+          "<head><meta charset='utf-8'><title>Resume for Matthew Keil</title></head>";
+
+        const body = document.getElementById("summary");
+
+        const footer = "</html>";
+
+        const source = header + body + footer;
+
+        const date = new Date();
+        const m = date.getMonth() + 1;
+        const d = date.getDay() + 1;
+
+        const normalize = num => (num < 10 ? `0${num}` : `${num}`);
+
+        const formatedDate = `2019-${normalize(m)}-${normalize(d)}`;
+
+        const fileDownload = document.createElement("a");
+        fileDownload.setAttribute(
+          "href",
+          "data:application/vnd.ms-word;charset=utf-8,",
+          encodeURIComponent(source)
+        );
+        fileDownload.setAttribute(
+          "download",
+          `Resume_of_Matthew_Keil-${formatedDate}.docx`
+        );
+        fileDownload.style = {
+          position: "absolute",
+          opacity: 0
+        };
+
+        document.body.appendChild(fileDownload);
+        fileDownload.click();
+        document.body.removeChild(fileDownload);
+      }
+    </script>
   </head>
   <body>
-    <main class="sheet">
-      <div>
-        <div class="headline">
+    <div class="container">
+      <main>
+        <header>
           <h1>Matthew Keil</h1>
           <h2>Full-Stack Developer</h2>
-          <span>
-            <a href="https://github.com/matthewkeil">
-              github.com/matthewkeil
-            </a>
-          </span>
-          <span>
+          <div>
+            <span>Ft. Lauderdale, FL</span>
+            <span>954-734-4691</span>
+          </div>
+          <div>
             <a href="https://www.linkedin.com/in/matthew-keil">
-              www.linkedin.com/in/matthew-keil
+              <img src="assets/linkedin.png" alt="LinkedIn" height="20px" />
             </a>
-          </span>
-          <span>
+            <a href="https://github.com/matthewkeil">
+              <img src="assets/github.svg" alt="github" height="20px" />
+            </a>
             <a href="mailto:me@matthewkeil.com">
-              me@matthewkeil.com
+              <img src="assets/email.png" alt="email" height="20px" />
             </a>
-          </span>
-          <span>954-734-4691</span>
-          <span>Ft. Lauderdale, Florida</span>
-        </div>
-        <div class="main-info">
-          <section>
-            <h2>Summary</h2>
-            <p id="summary">
-              I am both a classically trained engineer and a hands-on person. I
-              cut my teeth in the construction industry and worked with others
-              to lead large teams of technical and non-technical personnel. Life
-              is complex and we often need to lead through difficult situations
-              with soft skills honed through a human-resource approach to
-              management. After a long sabbatical I have decided to retool and
-              grow my skills in a new direction. My computer savvy was a huge
-              boon throughout my construction career and taking it to new
-              heights has been an excellent decision. I truly love to code and
-              look forward to sharing that love with you.
-            </p>
-          </section>
-          <section>
-            <h2>Technologies</h2>
-            <ul id="technologies">
-              <li>
-                <div>
-                  <img src="/assets/technologies/html.png" alt="HTML" />
-                  <p>HTML</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/css.png" alt="CSS" />
-                  <p>CSS</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src="/assets/technologies/javascript.svg"
-                    alt="JavaScript"
-                  />
-                  <p>JavaScript</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src="/assets/technologies/typescript.png"
-                    alt="TypeScript"
-                  />
-                  <p>TypeScript</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/jquery.png" alt="jQuery" />
-                  <p>jQuery</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/react.svg" alt="React" />
-                  <p>React</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/angular.svg" alt="Angular" />
-                  <p>Angular</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/vue.png" alt="Vue" />
-                  <p>Vue</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/redux.svg" alt="Redux" />
-                  <p>React</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src="/assets/technologies/redux-saga.png"
-                    alt="Redux Saga"
-                  />
-                  <p>Redux Saga</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/apollo.png" alt="Apollo" />
-                  <p>Apollo</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/graphql.svg" alt="GraphQL" />
-                  <p>GraphQL</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/node.svg" alt="Node" />
-                  <p>Node</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/mongodb.jpg" alt="MongoDB" />
-                  <p>MongoDB</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/neo4j.png" alt="Neo4J" />
-                  <p>Neo4j</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/webpack.png" alt="webpack" />
-                  <p>Webpack</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/docker.svg" alt="docker" />
-                  <p>Docker</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src="/assets/technologies/kubernetes.png"
-                    alt="kubernetes"
-                  />
-                  <p>Kubernetes</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/shell.png" alt="shell" />
-                  <p>Scripting</p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <img src="/assets/technologies/google.png" alt="google" />
-                  <p>GoogleCloud</p>
-                </div>
-              </li>
-            </ul>
-          </section>
-          <section id="projects">
-            <h2>Projects</h2>
+          </div>
+        </header>
+        <section>
+          <h2>Summary</h2>
+          <p id="summary">
+            I am both a classically trained engineer and a hands-on person. I
+            cut my teeth in the construction industry and worked with others to
+            lead large teams of technical and non-technical personnel. Life is
+            complex and we often need to lead through difficult situations with
+            soft skills honed through a human-resource approach to management.
+            After a long sabbatical I have decided to retool and grow my skills
+            in a new direction. My computer savvy was a huge boon throughout my
+            construction career and taking it to new heights has been an
+            excellent decision. I truly love to code and look forward to sharing
+            that love with you.
+          </p>
+        </section>
+        <section id="projects">
+          <h2>Projects</h2>
+          <div class="project-container">
+            <img src="assets/number-noshers-logo" alt="number noshers logo" />
             <div>
-              <a href="http://noshers.matthewkeil.com"
-                ><h3>Number Noshers</h3></a
-              >
+              <h3>
+                <a href="http://noshers.matthewkeil.com">Number Noshers</a>
+              </h3>
               <h5>
                 Open-Source clone of the original number munchers game.
               </h5>
-              <ul>
+              <ul class="list-with-bullets">
+                <li>managing listener clean-up and memory leak detection</li>
+                <li>mastering direct DOM manipulation</li>
+              </ul>
+              <ul class="stack">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>CSS Animations</li>
@@ -203,13 +111,25 @@
                 <li>Google Platform</li>
               </ul>
             </div>
+          </div>
+          <div class="project-container">
+            <img src="assets/bougie-haus-logo" alt="bougie haus logo" />
             <div>
-              <a href="http://bougie.haus"><h3>Bougie Haus</h3></a>
+              <h3><a href="http://bougie.haus">Bougie Haus</a></h3>
               <h5>
                 Full-Stack React app for researching, aggregating and perfecting
                 recipes
               </h5>
-              <ul>
+              <ul class="list-with-bullets">
+                <li>
+                  Integration of UX/UI during wire-framing to promote smooth
+                  user flows
+                </li>
+                <li>
+                  Data design methodology to avoid user driven duplication
+                </li>
+              </ul>
+              <ul class="stack">
                 <!-- <li>HTML</li> -->
                 <!-- <li>CSS</li> -->
                 <!-- <li>JavaScript</li> -->
@@ -229,19 +149,35 @@
                 <li>Kubernetes</li>
               </ul>
             </div>
+          </div>
+          <div class="project-container">
+            <img src="assets/homodigit-us" alt="homodigit us logo" />
             <div>
-              <a href="https://github.com/matthewkeil/homodigit.us"
-                ><h3>homodigit.us</h3></a
-              >
+              <h3>
+                <a href="https://github.com/matthewkeil/homodigit.us"
+                  >homodigit.us</a
+                >
+              </h3>
               <h5>
-                Helm/Kubernetes managed VM cluster with five-nines uptime.
-                Load-balancing for SSL protected cloud storage. Production node
-                hosting. Neo4j cluster and backups. Development platform.
+                Kubernetes orchestrated cluster. Serves bucket storage over
+                https. Production Node.js hosting.
               </h5>
+              <ul class="list-with-bullets">
+                <li>IP/DNS/SSL Management</li>
+                <li>Container orchestration</li>
+                <li>Microservice architecture</li>
+              </ul>
+              <ul class="stack">
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>Helm</li>
+                <li>NGINX</li>
+                <li>GoogleCloud</li>
+              </ul>
             </div>
-          </section>
-        </div>
-      </div>
+          </div>
+        </section>
+      </main>
       <aside>
         <h2>Work History</h2>
         <section id="history">
@@ -311,7 +247,146 @@
           </div>
         </section>
       </aside>
-    </main>
+    </div>
+
+    <!-- <section>
+        <h2>Technologies</h2>
+        <ul id="technologies">
+          <li>
+            <div>
+              <img src="/assets/technologies/html.png" alt="HTML" />
+              <p>HTML</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/css.png" alt="CSS" />
+              <p>CSS</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img
+                src="/assets/technologies/javascript.svg"
+                alt="JavaScript"
+              />
+              <p>JavaScript</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img
+                src="/assets/technologies/typescript.png"
+                alt="TypeScript"
+              />
+              <p>TypeScript</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/jquery.png" alt="jQuery" />
+              <p>jQuery</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/react.svg" alt="React" />
+              <p>React</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/angular.svg" alt="Angular" />
+              <p>Angular</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/vue.png" alt="Vue" />
+              <p>Vue</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/redux.svg" alt="Redux" />
+              <p>React</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img
+                src="/assets/technologies/redux-saga.png"
+                alt="Redux Saga"
+              />
+              <p>Redux Saga</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/apollo.png" alt="Apollo" />
+              <p>Apollo</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/graphql.svg" alt="GraphQL" />
+              <p>GraphQL</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/node.svg" alt="Node" />
+              <p>Node</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/mongodb.jpg" alt="MongoDB" />
+              <p>MongoDB</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/neo4j.png" alt="Neo4J" />
+              <p>Neo4j</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/webpack.png" alt="webpack" />
+              <p>Webpack</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/docker.svg" alt="docker" />
+              <p>Docker</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img
+                src="/assets/technologies/kubernetes.png"
+                alt="kubernetes"
+              />
+              <p>Kubernetes</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/shell.png" alt="shell" />
+              <p>Scripting</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="/assets/technologies/google.png" alt="google" />
+              <p>GoogleCloud</p>
+            </div>
+          </li>
+        </ul>
+      </section> -->
+
     <!-- <main class="sheet">
       <div>
         <div class="headline">
