@@ -158,6 +158,10 @@ h5 {
   color: rgb(22, 32, 73);
 }
 
+h6 {
+  font-size: 0.8rem;
+}
+
 p {
   font-size: 1.1rem;
 }
@@ -193,18 +197,41 @@ a[href^="mailto"] {
 
 main {
   height: 100%;
-  /* flex-basis: 65%; */
   overflow: hidden;
-  padding-top: 0.25in;
   max-width: 36rem;
   margin: 0 auto;
 }
 
-main > section {
+aside {
+  flex-basis: 35%;
+  flex-grow: 1;
+  height: 100%;
+  overflow: hidden;
+  border-left: 1px solid rgba(22, 32, 73, 0.75);
+}
+
+main > h2,
+aside > h2 {
   border-top: 1px solid rgba(22, 32, 73, 0.75);
+}
+
+aside h2 {
+  padding-left: 1rem;
+}
+
+main > section {
   padding-bottom: 1.5rem;
   padding-right: 0.8em;
 }
+
+aside > section {
+  padding-left: 1rem;
+}
+
+aside > h2:first-of-type {
+  padding-top: 0;
+}
+
 /** 
 *
 *
@@ -249,7 +276,7 @@ header > div > *:first-child {
 
 #projects article {
   padding-top: 2rem;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
 #projects article:first-of-type {
@@ -279,10 +306,10 @@ header > div > *:first-child {
 }
 
 .project-container > img {
-  width: 3rem;
-  height: 3rem;
+  max-width: 3rem;
+  max-height: 3rem;
   margin-right: 1.5rem;
-  margin-top: .3rem;
+  margin-top: 0.3rem;
 }
 
 .project-container li {
@@ -294,19 +321,20 @@ header > div > *:first-child {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
+  padding-top: .2rem;
 }
 
 .stack li {
-  width: 2rem;
-  height: 2rem;
+  width: 2.3rem;
+  height: 2.2rem;
   overflow: hidden;
-  margin-left: 0.8rem;
+  margin-left: 0.6rem;
   margin-top: 0.8rem;
 }
 
 .stack img {
   display: block;
-  height: 25px;
+  height: 24px;
   margin: 0 auto;
   margin-bottom: 0.1rem;
 }
@@ -323,34 +351,6 @@ header > div > *:first-child {
 *
 *
 */
-aside {
-  flex-basis: 35%;
-  flex-grow: 1;
-  height: 100%;
-  padding-top: 0.25in;
-  padding-right: 0.25in;
-  overflow: hidden;
-}
-
-aside > section {
-  border-left: 1px solid rgba(22, 32, 73, 0.75);
-  width: 100%;
-  padding-left: 1rem;
-}
-
-aside h2 {
-  padding-left: 1rem;
-  /*padding-bottom: 0.3rem; */
-  /* padding-top: .3rem; */
-  /* line-height: 1; */
-  border-left: 1px solid rgba(22, 32, 73, 0.75);
-  border-top: 1px solid rgba(22, 32, 73, 0.75);
-}
-
-aside h2:first-of-type {
-  /* border-top: none; */
-  padding-top: 0;
-}
 
 .company {
   position: relative;
@@ -358,7 +358,7 @@ aside h2:first-of-type {
 }
 
 .company > div {
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 }
 
 .company p {
@@ -366,7 +366,7 @@ aside h2:first-of-type {
 }
 
 .skill-set li {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 /* .company::after {
@@ -400,9 +400,13 @@ aside h2:first-of-type {
   left: -0.1rem;
 }
 
-.dates div:last-child {
-  /* padding-bottom: 0.3rem; */
-  font-size: 80%;
+.with-floated-span {
+  display: flex;
+}
+
+.with-floated-span span {
+  text-align: right;
+  flex-grow: 1;
 }
 
 @page {
@@ -411,18 +415,30 @@ aside h2:first-of-type {
 }
 
 @media print {
+  html,
   body {
-    background-color: black;
+    /* background-color: black; */
+    width: 8.5in;
+    height: 11in;
   }
 
   .container {
-    width: 8.5in;
-    height: 11in;
+    /* width: 8.5in; */
+    /* height: 11in; */
     padding-left: 0.2in;
     padding-bottom: 0.2in;
     padding-right: 0;
     padding-top: 0;
     margin: 0 auto;
+  }
+
+  main {
+    padding-top: 0.25in;
+  }
+
+  aside {
+    margin-top: 0.25in;
+    padding-right: 0.25in;
   }
 
   header a::after {
@@ -441,23 +457,38 @@ aside h2:first-of-type {
 }
 
 @media screen {
-
   .container {
+    width: 100vw;
     margin: 0 auto;
     max-width: 8.5in;
+  }
+
+  main {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  aside {
+    margin-top: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
 @media screen and (max-width: 719px) {
   .container {
     display: block;
-    padding-left: 4vw;
-    padding-right: 4vw;
+    padding-left: 8vw;
+    padding-right: 8vw;
   }
 
   main,
   aside {
-    width: 100%;
+    padding-left: 0;
+    padding-bottom: 0;
+    border: none;
+    max-width: 100%;
   }
 
   h2,
@@ -465,34 +496,23 @@ aside h2:first-of-type {
     text-align: center;
   }
 
+  h2 {
+    padding-left: 0 !important;
+  }
+
   aside {
-    padding-top: 0;
+    margin-top: 0;
     padding-right: 0;
   }
-  
+
   aside > section {
     border-left: none;
     padding-left: 0;
   }
-  
-  aside h2 {
+
+  aside > h2 {
     border-left: none;
   }
-
-  /* .dates {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-
-  .dates div:last-child {
-    padding-bottom: 0;
-    white-space: nowrap;
-    flex-grow: 1;
-    align-self: flex-end;
-    text-align: right;
-  } */
 }
 
 @media screen and (max-width: 480px) {
@@ -500,52 +520,24 @@ aside h2:first-of-type {
     padding-left: 0;
     padding-right: 0;
   }
+
+  main > section,
+  aside > section,
+  header {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  header > h1 {
+    font-size: 2.5rem;
+  }
+
+  header > h2 {
+    font-size: 1.5rem;
+  }
+
+  #projects article {
+    padding-left: .1rem !important;
+    padding-top: 1.5rem;
+  }
 }
-
-
-
-/** 
-*
-*
-*  helpers
-*
-*
-*/
-
-
-#essentials li {
-  position: relative;
-  padding-left: 4%;
-}
-
-#essentials li::before {
-  content: "-";
-  position: absolute;
-  left: 1%;
-}
-
-#excellence ul {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  padding-top: 0.3rem;
-  padding-left: 0.3rem;
-}
-
-#excellence li {
-  font-size: 90%;
-  position: relative;
-  padding-left: 4%;
-  flex-basis: 29%;
-}
-
-#excellence li::before {
-  content: "-";
-  position: absolute;
-  left: 6%;
-}
-
-/* 
-div.years {
-    display: inline-block;
-} */
